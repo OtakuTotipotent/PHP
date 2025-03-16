@@ -1,9 +1,10 @@
 <?php
+
 $host = "localhost"; // XAMPP apache server address
 $user = "root"; // database user name (for MySQL80 workbench)
 $password = "90000"; // database password (for MySQL80 workbench)
 $database = "college"; // a database created during PHP learning in GGCL
-$port = 3307; // MySQL80 workbench port number
+$port = 3306; // MySQL80 workbench default port number
 
 $connection = mysqli_connect($host, $user, $password, $database, $port) or die("ERROR: Connection not established."); // connection to the database server
 
@@ -31,6 +32,7 @@ if (isset($_POST['submit-btn'])) { // if user clicks submit button on web page
         echo "<div class='message error'>ERROR: Invalid Data.</div>";
     }
 }
+
 ?>
 
 <!--! The HTML FORM CODE GOES HERE -->

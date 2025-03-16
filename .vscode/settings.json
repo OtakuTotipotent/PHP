@@ -1,7 +1,9 @@
 {
     "cSpell.words": [
+        "blackhole",
         "GGCL",
         "sname",
         "XAMPP"
-    ]
+    ],
+    "editor.stickyScroll.enabled": false
 }

@@ -280,6 +280,7 @@ input:focus {
 
 input.warning {
     border-color: rgba(255, 0, 0, 0.5);
+    color: red;
 }
 
 input.warning::placeholder {
@@ -343,12 +344,14 @@ input.warning::placeholder {
     width: 100%;
     font-size: 16px;
     padding: 5px;
+    cursor: not-allowed;
 }
 
 .crud-section .btn {
     font-size: 16px;
     padding: 3px 18px;
     width: fit-content;
+    cursor: not-allowed;
 }
 
 .table {
@@ -464,6 +467,7 @@ td:nth-child(4) {
     .card {
         width: 100%;
         padding: 10px;
+        overflow: hidden;
     }
 
     h2 {
@@ -471,6 +475,7 @@ td:nth-child(4) {
         background-clip: text;
         color: transparent;
         font-size: 18px;
+        text-align: center;
     }
 
     form {
@@ -511,7 +516,8 @@ td:nth-child(4) {
     .message {
         font-size: 13px;
         padding: 6px 8px;
-        /* min-height: 70px; */
+        top: 16px;
+        position: relative;
     }
 
     .features-section {

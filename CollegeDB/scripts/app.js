@@ -8,12 +8,11 @@ const submit = document.querySelector('form button');
 const inputs = document.body.querySelectorAll('form input');
 inputs.forEach(input => {
     input.addEventListener('blur', (e) => {
-        if (input.value.trim() == '') {
+        if (input.value.trim() === '') {
             input.classList.add('warning');
             messageForm.textContent = `Please fill ${input.getAttribute('id')} field`;
             messageForm.classList.add('error');
-        }
-        else {
+        } else {
             input.classList.remove('warning');
             messageForm.classList.remove('error');
             messageForm.textContent = '';
@@ -21,22 +20,21 @@ inputs.forEach(input => {
     });
 });
 
-
 // ? REGEX & VALIDATIONS
 
 const rno_regex = /^\d+$/;
-const name_regex = /^[A-Za-z\s]{2,}/;
+const name_regex = /^[A-Za-z\s]{2,}$/;
 const degree_regex = /^[A-Za-z\s]{2,}$/;
 const marks_regex = /^\d+$/;
 
 function validateInputs(target, regex) {
-    if (regex.test(target.value)) {
+    if (!regex.test(target.value)) { // Fix the condition to check if the input does not match the regex
         target.classList.add('warning');
         messageForm.classList.add('error');
         messageForm.textContent = 'Invalid Input';
     } else {
         target.classList.remove('warning');
-        messageForm.classList.remove('warning');
+        messageForm.classList.remove('error');
         messageForm.textContent = '';
     }
 }

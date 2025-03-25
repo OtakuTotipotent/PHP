@@ -29,7 +29,7 @@ include("./scripts/display.php");
 
 <body>
     <div class="container">
-        <!-- <video class="background-video" loop autoplay plays-inline muted src="./videos/galaxy.mp4" type="video"></video> -->
+        <video class="background-video" loop autoplay plays-inline muted src="./videos/galaxy.mp4" type="video"></video>
 
         <header>
             <div class="left">
@@ -44,7 +44,7 @@ include("./scripts/display.php");
         </header>
 
         <div class="blackhole-box">
-            <!-- <video class="blackhole" loop autoplay plays-inline muted src="./videos/blackhole.mp4" type="video"></video> -->
+            <video class="blackhole" loop autoplay plays-inline muted src="./videos/blackhole.mp4" type="video"></video>
         </div>
 
         <div class="interface">

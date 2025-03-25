@@ -1,8 +1,12 @@
 {
     "cSpell.words": [
         "blackhole",
+        "ERRMODE",
+        "formhandler",
         "GGCL",
         "sname",
+        "userdelete",
+        "userupdate",
         "XAMPP"
     ],
     "editor.stickyScroll.enabled": false

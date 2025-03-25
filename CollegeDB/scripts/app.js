@@ -7,18 +7,22 @@ const submit = document.querySelector('form button');
 
 const inputs = document.body.querySelectorAll('form input');
 inputs.forEach(input => {
-    input.addEventListener('blur', (e) => {
-        if (input.value.trim() === '') {
-            input.classList.add('warning');
-            messageForm.textContent = `Please fill ${input.getAttribute('id')} field`;
-            messageForm.classList.add('error');
-        } else {
-            input.classList.remove('warning');
-            messageForm.classList.remove('error');
-            messageForm.textContent = '';
-        }
-    });
+    input.addEventListener('blur', validateField);
+    input.addEventListener('input', validateField);
 });
+
+function validateField(e) {
+    const input = e.target;
+    if (input.value.trim() === '') {
+        input.classList.add('warning');
+        messageForm.textContent = `Please fill ${input.getAttribute('id')} field`;
+        messageForm.classList.add('error');
+    } else {
+        input.classList.remove('warning');
+        messageForm.classList.remove('error');
+        messageForm.textContent = '';
+    }
+}
 
 // ? REGEX & VALIDATIONS
 
@@ -28,7 +32,7 @@ const degree_regex = /^[A-Za-z\s]{2,}$/;
 const marks_regex = /^\d+$/;
 
 function validateInputs(target, regex) {
-    if (!regex.test(target.value)) { // Fix the condition to check if the input does not match the regex
+    if (!regex.test(target.value)) {
         target.classList.add('warning');
         messageForm.classList.add('error');
         messageForm.textContent = 'Invalid Input';

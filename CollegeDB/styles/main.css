@@ -9,7 +9,6 @@ body {
     width: 100%;
     height: 100vh;
     color: lightgray;
-    background-color: black;
 }
 
 ::selection {
@@ -153,7 +152,7 @@ header {
 }
 
 ::-webkit-scrollbar {
-    height: 3px;
+    height: 5px;
     width: 2px;
 }
 
@@ -212,14 +211,15 @@ h2 {
     justify-content: center;
     font-size: 15px;
     text-align: center;
+    color: inherit !important;
 }
 
 .form-message.error {
-    color: #cf78faff;
+    color: #cf78faff !important;
 }
 
 .message.success {
-    color: #330eedff;
+    color: #330eedff !important;
 }
 
 form {

@@ -1,0 +1,92 @@
+body {
+    background-color: cadetblue;
+}
+
+.container {
+    width: fit-content;
+    height: fit-content;
+    margin: 4rem auto 0 auto;
+}
+
+h3 {
+    font-size: 1.8rem;
+    text-align: center;
+    font-family: 'verdana', sans-serif;
+    color: cadetblue;
+    text-shadow: 1px 1px 4px black;
+    cursor: default;
+    padding: 0 16px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+input {
+    border: none;
+    outline: none;
+    padding: 6px 6px 6px 10px;
+    font-size: 16px;
+    color: #444;
+    letter-spacing: .4px;
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 2px solid transparent;
+    transition: .3s linear;
+}
+
+button {
+    outline: none;
+    padding: 4px;
+    margin-top: 1rem;
+    font-size: 15px;
+    border-radius: 100px;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: .4s;
+    color: white;
+    background-color: cadetblue;
+}
+
+input:focus,
+input:hover {
+    border-color: #444;
+}
+
+button:focus,
+button:hover {
+    box-shadow: inset 0 0 12px 9px white;
+    color: #444;
+    word-spacing: 28px;
+}
+
+/* navbar */
+
+.nav {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: flex-start;
+}
+
+.nav a {
+    color: #444;
+    text-underline-offset: 2px;
+    transition: .2s linear;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: 'poppins';
+    border-left: 2px solid #444;
+    padding: 3px 0px 3px 12px;
+}
+
+.nav a:hover,
+.nav a:active,
+.nav a:focus,
+.nav a.active {
+    color: white;
+    border-radius: 2px;
+    border-color: white;
+}

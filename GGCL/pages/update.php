@@ -24,6 +24,7 @@
     <div class="container">
         <h3>Modify Account</h3>
         <form action="../includes/userupdate.inc.php" method="post">
+            <input type="number" name="uid" id="uid" required placeholder="user id given by DBMS">
             <input type="text" name="username" id="username" required placeholder="username">
             <input type="email" name="email" id="email" required placeholder="email">
             <input type="password" name="pwd" id="pwd" required placeholder="****">

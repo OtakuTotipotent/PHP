@@ -1,4 +1,9 @@
 <?php
+
+include_once "includes/config_session.inc.php";
+include_once "includes/signup_view.inc.php";
+include_once "includes/login_view.inc.php";
+
 ?>
 
 <html lang="en">
@@ -21,13 +26,28 @@
     </header>
     <div class="container">
         <h3>Login</h3>
-        <form action="includes/formhandler.inc.php" method="post">
-            <input type="text" name="username" id="username" required placeholder="username">
-            <input type="email" name="email" id="email" required placeholder="email">
-            <input type="password" name="pwd" id="pwd" required placeholder="****">
+        <form action="includes/login.inc.php" method="POST">
+            <input type="text" name="username" id="username" placeholder="username">
+            <input type="password" name="pwd" id="pwd" placeholder="****">
             <button>Sign in</button>
         </form>
     </div>
+    <?php
+    check_login_errors();
+    ?>
+    <p style="color:#4444449f;font-family:'Poppins';font-size:1.2rem;font-weight:800; padding:16px 0px 0px;margin:0px;text-align:center;">OR</p>
+    <div class="container">
+        <h3>Sign up</h3>
+        <form action="includes/signup.inc.php" method="POST">
+            <?php
+            signup_inputs();
+            ?>
+            <button>Create account</button>
+        </form>
+    </div>
+    <?php
+    check_signup_errors();
+    ?>
 
 </body>
 

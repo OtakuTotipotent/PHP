@@ -3,12 +3,16 @@
 // This code that connects the database and servers to the target website
 
 // ----------------------------------------------------------------------
-$dsn = "mysql:host=localhost;dbname=ggcl";
-$dbUsername = 'root';
-$dbPassword = '90000';
+$hostname = 'localhost';
+$dbname = 'GGCL';
+$db_username = 'root';
+$db_password = '';
+
 try {
-    $pdo = new PDO($dsn, $dbUsername, $dbPassword);
+    $pdo = new PDO("mysql:host=$hostname;dbname=$dbname", $db_username, $db_password);
+
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // error handling
 } catch (PDOException $e) {
     echo 'Connection failed: ' . $e->getMessage();
 }

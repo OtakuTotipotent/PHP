@@ -1,16 +1,25 @@
 <?php
+$host = "localhost"; // MySQL server address
+$user = "root"; // MySQL Workbench username
+$password = "your_password"; // MySQL Workbench password
+$database = "collegeDB"; // Database name
+$port = 3306; // MySQL default port
 
-$connection = mysqli_connect("localhost", "root", "90000") or die('Connection Problem!');
-$db = mysqli_query($connection, "show databases like 'collegeDB';");
+// Establish connection to the MySQL server
+$connection = mysqli_connect($host, $user, $password, "", $port) or die("ERROR: Connection not established.");
 
-if (mysqli_num_rows($db) == 0) {
-    // if the database doesn't even exist, creates manually
-    mysqli_query($connection, "create database collegeDB");
-    mysqli_query($connection, "use collegeDB");
+// Check if the database exists
+$databaseExistsResult = mysqli_query($connection, "show databases like '$database';");
+
+if (mysqli_num_rows($databaseExistsResult) == 0) {
+    // If the database doesn't exist, create it
+    mysqli_query($connection, "create database $database");
+    mysqli_query($connection, "use $database");
     mysqli_query($connection, "create table students(rno int primary key, sname text, degree text, marks int);");
 }
 
-mysqli_select_db($connection, "collegeDB") or die("Database Problem!");
+// Select the database
+mysqli_select_db($connection, $database) or die("Database Problem!");
 
 include("./scripts/main.php");
 include("./scripts/display.php");

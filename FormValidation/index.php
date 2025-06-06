@@ -1,20 +1,26 @@
 <?php
 
 if (isset($_POST["submit-btn"])) {
-
+    // checks if the submit button is pressed
     $connection = mysqli_connect("localhost", "root", "90000") or die("Connection failed");
-
+    // server connection establishment
     $db = mysqli_query($connection, "SHOW DATABASES LIKE 'college';");
+    // database connection establishment
     if (mysqli_num_rows($db) > 0) {
+        // checks if the database already exists or not?
+        // if database already exists, the following code executes
         $db = mysqli_select_db($connection, "college");
         $rno = trim($_POST["rollNo-input"]);
         $name = trim($_POST['name-input']);
         $marks = trim($_POST['marks-input']);
         if ($rno == "" || $name == "" || $marks == "") {
+            // checks if any fields is empty
             echo "<h3 class='message error'>Enter Data First</h3>";
         } else {
             $data = mysqli_num_rows(mysqli_query($connection, "SELECT rno FROM result WHERE rno = '$rno';"));
+            // checks if data already exists
             if ($data == 0) {
+                // inserting data if previously not available
                 mysqli_query($connection, "INSERT INTO result(rno, sname, marks) VALUES('$rno','$name', '$marks');");
                 echo "<h3 class = 'message success'>Data inserted successfully</h3>";
             } else {
@@ -22,6 +28,7 @@ if (isset($_POST["submit-btn"])) {
             }
         }
     } else {
+        // if database does not exist, the following code for creating the desired database
         mysqli_query($connection, "CREATE DATABASE college;");
         mysqli_query($connection, "USE college;");
         mysqli_query($connection, "CREATE TABLE result(rno int primary key, sname text, marks int)");

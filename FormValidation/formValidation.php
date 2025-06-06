@@ -2,7 +2,7 @@
 
 $host = "localhost"; // XAMPP apache server address
 $user = "root"; // database user name (for MySQL80 workbench)
-$password = "90000"; // database password (for MySQL80 workbench)
+$password = ""; // database password (for MySQL80 workbench)
 $database = "college"; // a database created during PHP learning in GGCL
 $port = 3306; // MySQL80 workbench default port number
 

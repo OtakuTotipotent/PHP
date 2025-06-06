@@ -1,9 +1,9 @@
 <?php
 $host = "localhost"; // MySQL server address
 $user = "root"; // MySQL Workbench username
-$password = "your_password"; // MySQL Workbench password
+$password = "90000"; // MySQL Workbench password
 $database = "collegeDB"; // Database name
-$port = 3306; // MySQL default port
+$port = 3310; // MySQL default port
 
 // Establish connection to the MySQL server
 $connection = mysqli_connect($host, $user, $password, "", $port) or die("ERROR: Connection not established.");
